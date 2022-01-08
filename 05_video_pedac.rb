@@ -1,12 +1,18 @@
-# Imagine a sequence of consecutive even integers beginning with 2. The integers are grouped in rows, with the first row containing one integer, the second row two integers, the third row three integers, and so on. Given an integer representing the number of a particular row, return an integer representing the sum of all the integers in that row.
+# # Imagine a sequence of consecutive even integers beginning with 2. The
+# integers are grouped in rows, with the first row containing one integer,
+# the second row two integers, the third row three integers, and so on.
+# Given an integer representing the number of a particular row, return an
+# integer representing the sum of all the integers in that row.
 
 # **Rules:**
 # Sequence begins with two
 # Each row contains the same number of elements as the row depth
-# Each additional element increases by two and this does not reset when a new row begins
+# Each additional element increases by two and this does not reset when a
+# new row begins
 
 # Input: An integer representing the row number from the top
-# Output: An integer representing the sum of all integers in the input row from the top
+# Output: An integer representing the sum of all integers in the input row
+# from the top
 
 # Data structure: a two-dimensional array
 
@@ -48,13 +54,13 @@ def all_rows(int)
   arr = []
   counter = 1
   last_element = 0
-  temp_arr = [] 
+  temp_arr = []
   loop do
     break if counter > int
-        counter.times do 
-          last_element += 2
-          temp_arr.push(last_element)
-        end
+    counter.times do
+      last_element += 2
+      temp_arr.push(last_element)
+    end
     arr.push(temp_arr)
     last_element = temp_arr.last
     temp_arr = []
@@ -68,7 +74,7 @@ def sum_row(int)
 end
 
 p math_solution(7) == 350 && math_solution(7) == sum_row(7)
-p math_solution(6) == 222 
+p math_solution(6) == 222
 p all_rows(1)
 p all_rows(2)
 p all_rows(3)
